@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+import { transitions } from 'polished';
 import income from '../../assets/income.svg';
 import outcome from '../../assets/outcome.svg';
 import total from '../../assets/total.svg';
@@ -101,7 +102,7 @@ const Dashboard: React.FC = () => {
 
             <tbody>
               {transactions.map(transaction => (
-                <tr>
+                <tr key={transaction.id}>
                   <td className="title">{transaction.title}</td>
                   <td className={transaction.type}>
                     {transaction.type === 'outcome' && ' - '}
